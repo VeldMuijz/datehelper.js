@@ -16,10 +16,9 @@
         ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate()) + '-' + ((this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth()) + '-' + year.substr(2, 4));
         
     } else if (syntax === 'dd/mm/yy') {
-        alert( this.getFullYear())
         var year = this.getFullYear().toString();
+       
         dateToday = (
-        
         ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate()) + '/' + ((this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth()) + '/' + year.substring(2,4));
     }
      
