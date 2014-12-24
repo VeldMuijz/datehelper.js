@@ -2,34 +2,27 @@
     var dateToday = null;
 
     if (syntax === 'dd-mm-yyyy') {
-        dateToday =
-           ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate() + '-' +
-            (this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth() + '-' +
-             this.getFullYear()
-        );
-    } else if (syntax === 'dd/mm/yyy') {
-        dateToday =
-               ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate() + '/' +
-                (this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth() + '/' +
-                 this.getFullYear()
-            );
+        dateToday = (
+        ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate()) + '-' + ((this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth()) + '-' + this.getFullYear());
+        
+    } else if (syntax === 'dd/mm/yyyy') {
+        dateToday = (
+        ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate()) + '/' + ((this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth()) + '/' + this.getFullYear());
+        
     } else if (syntax === 'dd-mm-yy') {
-        var year = this.getFullYear();
+         var year = this.getFullYear().toString();
 
-        dateToday =
-           ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate() + '-' +
-            (this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth() + '-' +
-             year.substr(2, 2)
-        );
+        dateToday = (
+        ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate()) + '-' + ((this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth()) + '-' + year.substr(2, 4));
+        
     } else if (syntax === 'dd/mm/yy') {
-        var year = this.getFullYear();
-
-        dateToday =
-           ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate() + '/' +
-            (this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth() + '/' +
-             year.substr(2, 2)
-        );
+        alert( this.getFullYear())
+        var year = this.getFullYear().toString();
+        dateToday = (
+        
+        ((this.getDate() < 10) ? '0' + this.getDate() : this.getDate()) + '/' + ((this.getMonth() + 1 < 10) ? '0' + this.getMonth() : this.getMonth()) + '/' + year.substring(2,4));
     }
+     
     return dateToday;
 
 };
@@ -38,28 +31,15 @@ Date.prototype.timeNow = function (syntax) {
     var timeNow = null;
 
     if (syntax === 'hh:mm:ss') {
-        timeNow =
-                      (
-                            ((this.getHours() < 10) ? '0' + this.getHours() : this.getHours()) + ':' +
-                            ((this.getMinutes() < 10) ? '0' + this.getMinutes() : this.getMinutes()) + ':' +
-                            ((this.getSeconds() < 10) ? '0' + this.getSeconds() : this.getSeconds())
-                       );
+        timeNow = (
+        ((this.getHours() < 10) ? '0' + this.getHours() : this.getHours()) + ':' + ((this.getMinutes() < 10) ? '0' + this.getMinutes() : this.getMinutes()) + ':' + ((this.getSeconds() < 10) ? '0' + this.getSeconds() : this.getSeconds()));
     } else if (syntax === 'hh:mm') {
-        timeNow =
-                    (
-                        ((this.getHours() < 10) ? '0' + this.getHours() : this.getHours()) + ':' +
-                        ((this.getMinutes() < 10) ? '0' + this.getMinutes() : this.getMinutes()) + ':' +
-                        ((this.getSeconds() < 10) ? '0' + this.getSeconds() : this.getSeconds())
-                    );
+        timeNow = (
+        ((this.getHours() < 10) ? '0' + this.getHours() : this.getHours()) + ':' + ((this.getMinutes() < 10) ? '0' + this.getMinutes() : this.getMinutes()) + ':' + ((this.getSeconds() < 10) ? '0' + this.getSeconds() : this.getSeconds()));
 
     } else {
-        timeNow =
-                    (
-                        ((this.getHours() < 10) ? '0' + this.getHours() : this.getHours()) + ':' +
-                        ((this.getMinutes() < 10) ? '0' + this.getMinutes() : this.getMinutes()) + ':' +
-                        ((this.getSeconds() < 10) ? '0' + this.getSeconds() : this.getSeconds()) + '.' +
-                        ((this.getMilliseconds() < 10) ? '0' + this.getMilliseconds() : this.getMilliseconds())
-                    );
+        timeNow = (
+        ((this.getHours() < 10) ? '0' + this.getHours() : this.getHours()) + ':' + ((this.getMinutes() < 10) ? '0' + this.getMinutes() : this.getMinutes()) + ':' + ((this.getSeconds() < 10) ? '0' + this.getSeconds() : this.getSeconds()) + '.' + ((this.getMilliseconds() < 10) ? '0' + this.getMilliseconds() : this.getMilliseconds()));
 
     }
 
